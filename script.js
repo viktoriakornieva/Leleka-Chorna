@@ -25,3 +25,13 @@ document.querySelectorAll('.section, .card, .headline, .lead, .photo-frame').for
 
 // Dynamic year
 const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+
+
+// Light parallax for hero accent
+(function(){
+  const root = document.documentElement;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY || 0;
+    root.style.setProperty('--parallaxY', Math.min(30, y * 0.06) + 'px');
+  }, { passive:true });
+})();

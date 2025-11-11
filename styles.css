@@ -237,3 +237,59 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 
 
 /* Avoid big empty stripes on ultrawide: add gentle background tone */
 body{ background: linear-gradient(180deg,#ffffff 0%, #fbfcfb 100%); }
+
+
+/* ===== Subtle brand background motif (no image, data-URI SVG) ===== */
+body::before{
+  content:"";
+  position:fixed; inset:-10vmax;
+  z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(1200px 600px at 120% -10%, rgba(111,163,58,.06), transparent 60%),
+    radial-gradient(800px 400px at -10% 120%, rgba(111,163,58,.05), transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' opacity='0.05'><g fill='none' stroke='%236FA33A' stroke-width='2'><path d='M120 320 C 200 260, 340 240, 460 300'/><path d='M140 360 C 230 300, 360 300, 520 360'/><circle cx='600' cy='180' r='26'/><circle cx='620' cy='200' r='12'/></g></svg>") center / 900px no-repeat;
+  filter: blur(2px);
+}
+
+/* ===== Big handwritten quote ===== */
+.big-quote{
+  margin: 8px 0 0;
+  font-size: clamp(1.3rem, 3.4vw, 2rem);
+  line-height: 1.2;
+  color: var(--muted);
+  opacity:.95;
+}
+
+/* ===== Smaller hero photo to lighten header composition ===== */
+.smaller-photo{ max-width: 86%; margin-left: auto; margin-right: auto; transform: rotate(-0.6deg) }
+@media (min-width: 980px){
+  .smaller-photo{ max-width: 78%; }
+}
+
+/* ===== Balanced panels: equal rhythm, tidy grid, no awkward empties ===== */
+.panel--balanced{ display:flex; flex-direction:column; justify-content:flex-start; gap: .4rem; }
+.cards{ align-items:stretch }
+.cards > .panel{ height: 100% }
+.grid-2{ align-items:stretch }
+.grid-2 > .panel{ height: 100% }
+.panel--balanced .card-title{ margin-bottom:.4rem }
+.panel--balanced .checklist, .panel--balanced .bullets{ margin-top:.2rem; margin-bottom:.4rem }
+
+/* Slightly stronger yet soft shadow for depth */
+.panel{ box-shadow: 0 10px 26px rgba(12,22,18,.06) }
+
+/* ===== Light parallax on hero background accents (translate on scroll) ===== */
+.hero{ position:relative; overflow:clip }
+.hero::after{
+  content:""; position:absolute; right:-12%; top:-8%;
+  width:38vmin; height:38vmin; border-radius:50%;
+  background: radial-gradient(closest-side, rgba(111,163,58,.12), transparent);
+  filter: blur(2px);
+  transform: translateY(var(--parallaxY, 0px));
+}
+
+/* ===== Desktop wide tweaks to avoid empty space ===== */
+@media (min-width: 1240px){
+  .hero-inner{ grid-template-columns: 1.05fr .95fr; gap: 40px }
+  .cards{ grid-auto-rows: 1fr }
+}
