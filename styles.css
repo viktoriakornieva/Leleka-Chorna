@@ -204,3 +204,36 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 
   .brand img{width:44px;height:44px}
   .header-inner{min-height:68px}
 }
+
+
+/* ===== Wide-screen optimization ===== */
+@media (min-width: 1240px){
+  .container{ width: min(1280px, 88%); }
+  .hero-inner{ grid-template-columns: 1.05fr .95fr; gap: 36px; }
+  .cards{ grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); }
+}
+@media (min-width: 1536px){
+  .container{ width: min(1360px, 86%); }
+  .cards{ grid-template-columns: repeat(3, minmax(320px, 1fr)); }
+}
+
+/* Make last orphan card span full row to avoid awkward gaps */
+.cards > .card:nth-last-child(1):only-child{ grid-column: 1 / -1; }
+.grid-2 > .card:nth-last-child(1):only-child{ grid-column: 1 / -1; }
+
+/* Hero image cover behavior to fill composition nicely */
+.photo-frame img{ width:100%; height:auto; object-fit:cover }
+
+/* Handwritten accents more visible but subtle */
+.hand{ font-family:'Marck Script','Segoe Script',cursive; letter-spacing:.2px }
+.hand2{ font-family:'Caveat','Marck Script','Segoe Script',cursive; letter-spacing:.2px }
+.section-title.hand2{ border-bottom-color: var(--accent); }
+
+/* Panel spacing tuned for tighter rhythm on desktop */
+.panel{ padding: 22px }
+@media (min-width: 1240px){
+  .panel{ padding: 24px }
+}
+
+/* Avoid big empty stripes on ultrawide: add gentle background tone */
+body{ background: linear-gradient(180deg,#ffffff 0%, #fbfcfb 100%); }
