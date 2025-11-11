@@ -249,9 +249,9 @@ body{ background: linear-gradient(180deg,#ffffff 0%, #fbfcfb 100%); }
 }
 
 /* ===== Smaller hero photo to lighten header composition ===== */
-.smaller-photo{ max-width: 86%; margin-left: auto; margin-right: auto; transform: rotate(-0.6deg) }
+.smaller-photo{ max-width: 74%; margin: 0 auto; transform: rotate(-0.6deg) }
 @media (min-width: 980px){
-  .smaller-photo{ max-width: 78%; }
+  .smaller-photo{ max-width: 74%; margin: 0 auto; transform: rotate(-0.6deg) }
 }
 
 /* ===== Balanced panels: equal rhythm, tidy grid, no awkward empties ===== */
@@ -399,3 +399,33 @@ body {
 
 /* ===== Main quote accent color ===== */
 .big-quote--accent { color: #3D5A2C !important; font-weight: 600; }
+
+
+/* === Typography scale === */
+h1.headline{ font-size: clamp(2.4rem, 5vw, 3.2rem); }
+h2{ font-size: clamp(1.9rem, 3.2vw, 2.2rem); }
+.card-title{ font-size: 1.24rem; }
+.hand2, .hand{ font-size: 1.06em; } /* slightly larger handwritten accents */
+
+/* === Spacing rhythm === */
+.section{ padding: 84px 0; }
+.cards{ gap: 26px }
+.grid-2{ gap: 28px }
+.panel{ padding: 24px }
+.panel + .panel{ margin-top: 10px }
+
+/* === FAQ dialog style === */
+.faq{ display:flex; flex-direction:column; gap: 12px; }
+.faq-item{ background: #fff; border:1px solid var(--line); border-radius: 14px; padding: 14px 16px }
+.faq-q{ font-weight: 700; }
+.faq-a{ color: var(--muted); margin-top: 6px; }
+
+/* === Photo caption highlight (keep) === */
+.photo-caption-highlight{ color:#6FA33A; font-size:1.3rem; text-align:center; margin-top:.6rem }
+
+
+/* ===== Logo section styling ===== */
+#logo-section{ padding:100px 0; background:transparent; text-align:center; }
+.course-logo{ width:260px; max-width:80%; height:auto; display:block; margin:0 auto 18px; }
+.logo-caption{ color:#555; font-size:1.2rem; text-align:center; }
+@media (max-width:768px){ .course-logo{ width:200px; } }
