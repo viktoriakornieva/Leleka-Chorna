@@ -239,18 +239,6 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 
 body{ background: linear-gradient(180deg,#ffffff 0%, #fbfcfb 100%); }
 
 
-/* ===== Subtle brand background motif (no image, data-URI SVG) ===== */
-body::before{
-  content:"";
-  position:fixed; inset:-10vmax;
-  z-index:-1; pointer-events:none;
-  background:
-    radial-gradient(1200px 600px at 120% -10%, rgba(111,163,58,.06), transparent 60%),
-    radial-gradient(800px 400px at -10% 120%, rgba(111,163,58,.05), transparent 60%),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600' opacity='0.05'><g fill='none' stroke='%236FA33A' stroke-width='2'><path d='M120 320 C 200 260, 340 240, 460 300'/><path d='M140 360 C 230 300, 360 300, 520 360'/><circle cx='600' cy='180' r='26'/><circle cx='620' cy='200' r='12'/></g></svg>") center / 900px no-repeat;
-  filter: blur(2px);
-}
-
 /* ===== Big handwritten quote ===== */
 .big-quote{
   margin: 8px 0 0;
@@ -292,4 +280,83 @@ body::before{
 @media (min-width: 1240px){
   .hero-inner{ grid-template-columns: 1.05fr .95fr; gap: 40px }
   .cards{ grid-auto-rows: 1fr }
+}
+
+
+/* ===== Bigger stacked logo with handwritten subtitle ===== */
+.brand{
+  display:flex; flex-direction:column; align-items:flex-start; gap:.25rem; font-weight:800
+}
+.brand img{ width:72px; height:72px; animation: floatY 6s ease-in-out infinite }
+.brand-hand{ font-size:1.15rem; line-height:1; opacity:.95 }
+.header-inner{ min-height:96px; gap:1.5rem }
+
+@media (max-width:980px){
+  .brand img{ width:58px; height:58px }
+  .brand-hand{ font-size:1.05rem }
+  .header-inner{ min-height:78px }
+}
+
+/* ===== Photo caption under teacher image ===== */
+.photo-caption{
+  font-size:.9rem; color:var(--muted); padding:.5rem .6rem .2rem;
+}
+
+
+/* ===== Bigger header logo + stacked brand ===== */
+.brand{ display:flex; align-items:center; gap:1.1rem; font-weight:800 }
+.brand-logo{ width:68px; height:68px; animation: floatY 6s ease-in-out infinite }
+@media (max-width:980px){
+  .brand-logo{ width:56px; height:56px }
+}
+.brand-title{ display:block; font-weight:800; line-height:1.05 }
+.brand-sub{ display:block; margin-top:2px; font-size:.98rem; opacity:.85; letter-spacing:.2px }
+
+/* Tweak header spacing to accommodate larger logo */
+.header-inner{ min-height:92px; gap:1.2rem }
+
+/* ===== Photo caption under hero portrait ===== */
+.photo-caption{
+  margin:.35rem 0 0;
+  font-size:.95rem;
+  color:var(--muted);
+  text-align:center;
+}
+
+/* ===== Bigger, accent quote in hero ===== */
+.big-quote{ margin:.6rem 0 0; }
+.big-quote--accent{
+  font-size: clamp(1.6rem, 4.6vw, 2.4rem);
+  line-height:1.15;
+  color: var(--accent);
+  text-shadow: 0 1px 0 rgba(255,255,255,.6);
+  display:block;
+}
+
+
+/* ===== Static green waves background (top & bottom) ===== */
+body::before, body::after{
+  content:"";
+  position:fixed;
+  left:0; right:0;
+  height:36vmin;
+  pointer-events:none;
+  z-index:-2;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:cover;
+  opacity:1; /* keep visible */
+}
+/* Top wave */
+body::before{
+  top:0;
+  z-index:-3;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400'><defs><linearGradient id='g1' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='%236FA33A'/><stop offset='100%' stop-color='%23A4D66C'/></linearGradient></defs><path d='M0,200 C200,120 440,80 680,140 C880,190 1040,170 1200,120 L1200,0 L0,0 Z' fill='url(%23g1)' fill-opacity='0.22'/></svg>");
+}
+/* Bottom wave */
+body::after{
+  bottom:0;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400'><defs><linearGradient id='g2' x1='0' y1='1' x2='1' y2='0'><stop offset='0%' stop-color='%23A4D66C'/><stop offset='100%' stop-color='%236FA33A'/></linearGradient></defs><path d='M0,240 C220,300 460,340 740,300 C940,270 1080,280 1200,320 L1200,400 L0,400 Z' fill='url(%23g2)' fill-opacity='0.22'/></svg>");
 }
