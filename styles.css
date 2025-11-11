@@ -587,3 +587,21 @@ section:nth-of-type(even){ background: linear-gradient(180deg,#ffffff 0%, #f8faf
   .container{ width: min(1380px, 84%); }
   .cards{ grid-template-columns: repeat(3, minmax(360px,1fr)); }
 }
+
+
+/* === Improved readability and structure === */
+.container{ width:min(1220px,90%); }
+.section{ padding:100px 0; }
+.cards{ gap:34px; align-items:start; grid-auto-rows:auto; }
+.panel{ padding:26px; border-radius:14px; box-shadow:0 3px 6px rgba(0,0,0,0.03); }
+.section + .section{ border-top:1px solid var(--line); }
+
+@media(min-width:1500px){
+  .container{ width:min(1360px,84%); }
+  .cards{ grid-template-columns:repeat(3,minmax(360px,1fr)); gap:40px; }
+}
+
+.form-helper{ margin-top:12px; color:var(--muted); font-size:.95rem; }
+
+/* alternate subtle section background */
+section:nth-of-type(even){ background:linear-gradient(180deg,#ffffff 0%,#f8faf7 100%); }
