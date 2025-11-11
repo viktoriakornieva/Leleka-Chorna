@@ -605,3 +605,47 @@ section:nth-of-type(even){ background: linear-gradient(180deg,#ffffff 0%, #f8faf
 
 /* alternate subtle section background */
 section:nth-of-type(even){ background:linear-gradient(180deg,#ffffff 0%,#f8faf7 100%); }
+
+
+/* ===== Contact section with Telegram only ===== */
+#contact{
+  background: #f9fbf8;
+  text-align: center;
+  padding: 100px 0;
+}
+#contact .section-title{
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  margin-bottom: 24px;
+}
+#contact .contact-instructions{
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+}
+#contact .contact-list{
+  list-style: disc;
+  text-align: left;
+  max-width: 520px;
+  margin: 0 auto 32px;
+  padding-left: 24px;
+  line-height: 1.8;
+}
+#contact .btn{
+  display: inline-block;
+  background: #3D5A2C;
+  color: #fff;
+  font-weight: 600;
+  padding: 14px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+#contact .btn:hover{
+  background: #2e441f;
+}
+
+/* === Compact layout adjustments === */
+.section{ padding: 65px 0 !important; }
+.panel{ padding: 18px !important; }
+.cards{ gap: 24px !important; }
+#contact{ padding: 70px 0 !important; }
+#quote-panel.section{ padding: 70px 0 !important; }
