@@ -1,12 +1,7 @@
-# Leleka Chorna — односторінковий сайт (final)
+# Leleka Chorna — односторінковий сайт (desktop-optimized)
 
-Світла тема, адаптив, анімації, акцентний зелений. Заняття індивідуально або в парі. Умови та FAQ оновлені.
+• Світла тема, більше білого, темніший трав’яний зелений акцент.  
+• Всі секції йдуть одна за одною, з уніфікованими відступами.  
+• Адаптив для мобільних і ноутбуків.
 
-## Структура
-- index.html
-- styles.css
-- script.js
-- assets/ (логотип, фото, фавікон, OG-обкладинка)
-
-## Публікація на GitHub Pages
-Settings → Pages → Deploy from a branch → main / root.
+Публікація: Settings → Pages → Deploy from a branch → main / root.
