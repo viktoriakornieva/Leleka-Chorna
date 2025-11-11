@@ -405,7 +405,7 @@ body {
 h1.headline{ font-size: clamp(2.4rem, 5vw, 3.2rem); }
 h2{ font-size: clamp(1.9rem, 3.2vw, 2.2rem); }
 .card-title{ font-size: 1.24rem; }
-.hand2, .hand{ font-size: 1.3em; } /* slightly larger handwritten accents */
+.hand2, .hand{ font-size:1.35em; } /* slightly larger handwritten accents */
 
 /* === Spacing rhythm === */
 .section{ padding: 84px 0; }
@@ -446,4 +446,27 @@ h2{ font-size: clamp(1.9rem, 3.2vw, 2.2rem); }
 @media (min-width: 980px){
   .author-panel{ max-width: 78%; }
   .photo-caption-highlight{ font-size: 1.6rem; }
+}
+
+
+/* ===== Final Author Caption ===== */
+.author-panel{
+  margin: 16px auto 0;
+  padding: 18px 20px;
+  max-width: 88%;
+  text-align:center;
+  border: 1px solid #e3e3e3;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+.photo-caption-highlight{
+  color:#6FA33A;
+  font-size:1.6rem;
+  font-weight:500;
+  text-shadow:0 1px 1px rgba(0,0,0,0.1);
+}
+@media (min-width: 980px){
+  .author-panel{ max-width:70%; }
+  .photo-caption-highlight{ font-size:1.7rem; }
 }
