@@ -405,7 +405,7 @@ body {
 h1.headline{ font-size: clamp(2.4rem, 5vw, 3.2rem); }
 h2{ font-size: clamp(1.9rem, 3.2vw, 2.2rem); }
 .card-title{ font-size: 1.24rem; }
-.hand2, .hand{ font-size: 1.06em; } /* slightly larger handwritten accents */
+.hand2, .hand{ font-size: 1.3em; } /* slightly larger handwritten accents */
 
 /* === Spacing rhythm === */
 .section{ padding: 84px 0; }
@@ -429,3 +429,21 @@ h2{ font-size: clamp(1.9rem, 3.2vw, 2.2rem); }
 .course-logo{ width:260px; max-width:80%; height:auto; display:block; margin:0 auto 18px; }
 .logo-caption{ color:#555; font-size:1.2rem; text-align:center; }
 @media (max-width:768px){ .course-logo{ width:200px; } }
+
+
+/* ===== Author caption panel under hero photo ===== */
+.author-panel{
+  margin: 10px auto 0;
+  padding: 14px 16px;
+  max-width: 90%;
+  text-align:center;
+}
+.photo-caption-highlight{
+  color:#6FA33A;
+  font-size:1.5rem;
+  text-shadow:0 1px 1px rgba(0,0,0,.08);
+}
+@media (min-width: 980px){
+  .author-panel{ max-width: 78%; }
+  .photo-caption-highlight{ font-size: 1.6rem; }
+}
