@@ -334,19 +334,7 @@ body{ background: linear-gradient(180deg,#ffffff 0%, #fbfcfb 100%); }
 }
 
 
-/* ===== Static green waves background (top & bottom) ===== */
-body::before, body::after{
-  content:"";
-  position:fixed;
-  left:0; right:0;
-  height:36vmin;
-  pointer-events:none;
-  z-index:-2;
-  background-repeat:no-repeat;
-  background-position:center;
-  background-size:cover;
-  opacity:1; /* keep visible */
-}
+
 /* Top wave */
 body::before{
   top:0;
@@ -360,3 +348,35 @@ body::after{
   background-image:
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400'><defs><linearGradient id='g2' x1='0' y1='1' x2='1' y2='0'><stop offset='0%' stop-color='%23A4D66C'/><stop offset='100%' stop-color='%236FA33A'/></linearGradient></defs><path d='M0,240 C220,300 460,340 740,300 C940,270 1080,280 1200,320 L1200,400 L0,400 Z' fill='url(%23g2)' fill-opacity='0.22'/></svg>");
 }
+
+
+/* ===== Static soft gradient background (no movement) ===== */
+body{
+  background: linear-gradient(180deg, #ffffff 0%, #f9fbf8 40%, #f3f8f2 100%);
+  background-attachment: fixed;
+}
+
+/* ===== Larger header and footer logos ===== */
+.brand-logo-big{ width:92px; height:92px; animation: floatY 6s ease-in-out infinite }
+@media (max-width:980px){
+  .brand-logo-big{ width:70px; height:70px }
+}
+.footer-logo-big{ width:96px; height:auto; }
+
+/* Ensure header height accommodates */
+.header-inner{ min-height:108px; }
+
+
+/* ===== Highlighted caption under teacher photo ===== */
+.photo-caption-highlight{
+  font-family:'Caveat','Marck Script','Segoe Script',cursive;
+  color:#6FA33A;
+  font-size:1.3rem;
+  font-weight:500;
+  text-align:center;
+  margin-top:.6rem;
+  text-shadow:0 1px 1px rgba(0,0,0,.08);
+}
+
+/* ===== Deep green accent for main quote ===== */
+.big-quote--accent{ color:#3D5A2C !important; }
