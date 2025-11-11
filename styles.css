@@ -559,3 +559,31 @@ section:nth-of-type(even){ background: linear-gradient(180deg,#ffffff 0%, #f8faf
   font-size: clamp(2.2rem, 6.8vw, 3.4rem); 
   letter-spacing: .2px;
 }
+
+
+/* Form status + hint */
+.form-status{ margin-top:12px; font-size:.98rem }
+.form-status.ok{ color:#2e7d32 }
+.form-status.err{ color:#c62828 }
+.form-note, .form-fallback{ color: var(--muted); margin-top:10px }
+
+/* Wide clarity: slightly larger line-height and spacing inside panels */
+.panel p{ line-height: 1.6 }
+@media (min-width: 1240px){
+  .section{ padding: 104px 0 }
+  .cards{ gap: 36px }
+  .panel{ padding: 28px }
+}
+
+
+/* === Clearer section separation and panel spacing === */
+.section{ padding: 100px 0; }
+.container{ width: min(1220px, 88%); }
+.cards{ gap: 34px }
+.panel{ padding: 26px }
+.form-helper{ margin-top:10px; color: var(--muted); font-size:.95rem }
+
+@media (min-width: 1536px){
+  .container{ width: min(1380px, 84%); }
+  .cards{ grid-template-columns: repeat(3, minmax(360px,1fr)); }
+}
