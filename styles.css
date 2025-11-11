@@ -514,3 +514,48 @@ h2{ font-size: clamp(1.9rem, 3.2vw, 2.2rem); }
   font-size: clamp(2rem, 6vw, 3.2rem);
 }
 #quote-panel.section{ padding: 76px 0; }
+
+
+/* ===== Wide-screen improvements ===== */
+@media (min-width: 1280px){
+  .container{ width: min(1320px, 88%); }
+  .cards{ grid-template-columns: repeat(3, minmax(320px, 1fr)); gap: 28px; }
+  .grid-2{ grid-template-columns: repeat(2, minmax(440px, 1fr)); gap: 32px; }
+}
+@media (min-width: 1600px){
+  .container{ width: min(1400px, 84%); }
+  .cards{ grid-template-columns: repeat(4, minmax(300px, 1fr)); gap: 30px; }
+}
+
+/* Quote panel centered emphasis */
+#quote-panel .quote-panel{ margin-left:auto; margin-right:auto; max-width: 980px; }
+
+
+/* ===== Readability upgrades for wide screens ===== */
+.container{ width: min(1200px, 88%); }
+
+@media (min-width: 1536px){
+  .container{ width: min(1360px, 84%); }
+  .cards{ grid-template-columns: repeat(3, minmax(360px, 1fr)); }
+}
+
+.section{ padding: 96px 0; }
+.section + .section{ border-top: 1px solid var(--line); }
+.cards{ gap: 32px; align-items: stretch; grid-auto-rows: 1fr; }
+.panel{ padding: 26px; }
+.panel + .panel{ margin-top: 14px; }
+
+/* Alternate very subtle background to separate long page visually */
+section:nth-of-type(even){ background: linear-gradient(180deg,#ffffff 0%, #f8faf7 100%); }
+
+/* Quote panel prominence */
+#quote-panel .quote-panel{ 
+  margin: 0 auto; 
+  max-width: 900px; 
+  padding: 36px 30px; 
+}
+#quote-panel .big-quote{ 
+  text-align:center; 
+  font-size: clamp(2.2rem, 6.8vw, 3.4rem); 
+  letter-spacing: .2px;
+}
