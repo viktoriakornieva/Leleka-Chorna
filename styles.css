@@ -405,7 +405,7 @@ body {
 h1.headline{ font-size: clamp(2.4rem, 5vw, 3.2rem); }
 h2{ font-size: clamp(1.9rem, 3.2vw, 2.2rem); }
 .card-title{ font-size: 1.24rem; }
-.hand2, .hand{ font-size:1.35em; } /* slightly larger handwritten accents */
+.hand2, .hand{ font-size: 1.9em; } /* slightly larger handwritten accents */
 
 /* === Spacing rhythm === */
 .section{ padding: 84px 0; }
@@ -470,3 +470,24 @@ h2{ font-size: clamp(1.9rem, 3.2vw, 2.2rem); }
   .author-panel{ max-width:70%; }
   .photo-caption-highlight{ font-size:1.7rem; }
 }
+
+
+/* ===== Quote panel before About ===== */
+#quote-panel .quote-panel{
+  background: #F3F8F2;
+  border: 1px solid var(--line);
+  text-align: center;
+  padding: 28px 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.04);
+}
+#quote-panel .big-quote{ 
+  color:#3D5A2C !important; 
+  font-weight: 600; 
+  margin: 0;
+  line-height: 1.12;
+  font-size: clamp(1.8rem, 5.4vw, 3rem);
+}
+
+/* Ensure section spacing remains generous */
+#quote-panel.section{ padding: 70px 0; }
